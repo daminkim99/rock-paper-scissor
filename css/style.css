@@ -1,3 +1,21 @@
 h1{
   color: red;
+  text-align:center;
+}
+
+fieldset{
+  width:40%;
+  margin: auto;
+  height:40%;
+  padding: 3% 2%;
+  text-align:center;
+}
+
+.choicebox{
+  margin: auto;
+  padding-bottom:4%;
+}
+button{
+  display:block;
+  margin:auto;
 }

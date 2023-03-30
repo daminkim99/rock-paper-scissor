@@ -6,12 +6,32 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <h1>Hello, world! (index.html)</h1>
-    <input id="userName" type="text" name="" placeholder="Enter Name">
-    <button id="clickMe" type="button" name="button">Click Me</button>
-    <h2 id="personName"></h2>
-    <h2 id="personStatus"></h2>
-    <h2 id="personOccupation"></h2>
+    <h1>Rock Paper Scissors</h1>
+
+    <form action="">
+
+      <fieldset>
+        <legend>Select your choice:</legend>
+          <div class="choicebox">
+            <input id="rock" type="radio" name="userpick">
+            <label for="rock">Rock</label>
+          
+            <input id="paper" type="radio" name="userpick">
+            <label for="paper">Paper</label>
+        
+            <input id="scissor" type="radio" name="userpick">
+            <label for="scissor">Scissor</label>
+          </div>
+          <button id="clickMe" type="submit" name="button">Let's Battle!</button>
+      </fieldset>
+      
+    </form>
+
+    <!-- place to put gifs -->
+    <img src='' id="gifs"></h2>
+
+    <!-- place to put the winning counts -->
+    <h2 id="count"></h2>
     <script type="text/javascript" src="/js/main.js"></script>
   </body>
 </html>
