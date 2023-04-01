@@ -12,6 +12,8 @@
   "dependencies": {
     "figlet": "^1.5.2",
     "i": "^0.3.7",
+    "node": "^19.8.1",
+    "node-modules": "^1.0.1",
     "npm": "^9.6.2"
   }
 }
