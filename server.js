@@ -4,6 +4,18 @@ const url = require('url');
 const querystring = require('querystring');
 const figlet = require('figlet')
 
+//function that creates the aiPick for RPS 
+function compRPS() {
+  let aiPick = Math.floor(Math.random()*3)
+  if (aiPick ==0){
+    return "rock"
+  }else if (aiPick ==1){
+    return "paper"
+  }else {
+    return "scissor"
+  }
+}
+
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
   const params = querystring.parse(url.parse(req.url).query);
@@ -30,26 +42,30 @@ const server = http.createServer((req, res) => {
     });
   }
   else if (page == '/api') {
-    if('student' in params){
-      if(params['student']== 'leon'){
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        const objToJson = {
-          name: "leon",
-          status: "Boss Man",
-          currentOccupation: "Baller"
-        }
-        res.end(JSON.stringify(objToJson));
-      }//student = leon
-      else if(params['student'] != 'leon'){
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        const objToJson = {
-          name: "unknown",
-          status: "unknown",
-          currentOccupation: "unknown"
-        }
-        res.end(JSON.stringify(objToJson));
-      }//student != leon
-    }//student if
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    aiPick = compRPS()
+    res.end(JSON.stringify(aiPick));
+  
+    // if('student' in params){
+    //   if(params['student']== 'leon'){
+    //     res.writeHead(200, {'Content-Type': 'application/json'});
+    //     const objToJson = {
+    //       name: "leon",
+    //       status: "Boss Man",
+    //       currentOccupation: "Baller"
+    //     }
+    //     res.end(JSON.stringify(objToJson));
+    //   }//student = leon
+    //   else if(params['student'] != 'leon'){
+    //     res.writeHead(200, {'Content-Type': 'application/json'});
+    //     const objToJson = {
+    //       name: "unknown",
+    //       status: "unknown",
+    //       currentOccupation: "unknown"
+    //     }
+    //     res.end(JSON.stringify(objToJson));
+    //   }//student != leon
+    // }//student if
   }//else if
   else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {
