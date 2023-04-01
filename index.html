@@ -13,16 +13,16 @@
       <fieldset>
         <legend>Select your choice:</legend>
           <div class="choicebox">
-            <input id="rock" type="radio" name="userpick">
+            <input id="rock" type="radio" name="userpick" value="rock" checked>
             <label for="rock">Rock</label>
           
-            <input id="paper" type="radio" name="userpick">
+            <input id="paper" type="radio" name="userpick" value="paper">
             <label for="paper">Paper</label>
         
-            <input id="scissor" type="radio" name="userpick">
+            <input id="scissor" type="radio" name="userpick" value="scissor">
             <label for="scissor">Scissor</label>
           </div>
-          <button id="clickMe" type="submit" name="button">Let's Battle!</button>
+          <button id="clickMe" type="button" name="button">Let's Battle!</button>
       </fieldset>
       
     </form>
@@ -32,6 +32,7 @@
       <!-- Player image -->
       <div class="player">
         <img src="" alt="">
+        <h1 class="userpicks"></h1>
       </div>
       <!-- VS image -->
       <div class="vs">
