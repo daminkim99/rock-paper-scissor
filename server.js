@@ -4,17 +4,21 @@ const url = require('url');
 const querystring = require('querystring');
 const figlet = require('figlet')
 
+
 //function that creates the aiPick for RPS 
-function compRPS() {
-  let aiPick = Math.floor(Math.random()*3)
-  if (aiPick ==0){
-    return "rock"
-  }else if (aiPick ==1){
-    return "paper"
-  }else {
-    return "scissor"
+const compRPS = {
+  pick: function() {
+    const aiPick = Math.floor(Math.random()*3);
+    if (aiPick ==0){
+      return "rock";
+    } else if (aiPick ==1){
+      return "paper";
+    } else {
+      return "scissor";
+    }
   }
-}
+};
+
 
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
@@ -27,24 +31,42 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  else if (page == '/otherpage') {
-    fs.readFile('otherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
-  else if (page == '/otherotherpage') {
-    fs.readFile('otherotherpage.html', function(err, data) {
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(data);
-      res.end();
-    });
-  }
+  // else if (page == '/otherpage') {
+  //   fs.readFile('otherpage.html', function(err, data) {
+  //     res.writeHead(200, {'Content-Type': 'text/html'});
+  //     res.write(data);
+  //     res.end();
+  //   });
+  // }
+  // else if (page == '/otherotherpage') {
+  //   fs.readFile('otherotherpage.html', function(err, data) {
+  //     res.writeHead(200, {'Content-Type': 'text/html'});
+  //     res.write(data);
+  //     res.end();
+  //   });
+  // }
+
+  // amazon.com/?=rubber+duck   :facepalm: 
   else if (page == '/api') {
+    const userPick = params.pick;
+    const aiPick = compRPS.pick();
     res.writeHead(200, {'Content-Type': 'application/json'});
-    aiPick = compRPS()
-    res.end(JSON.stringify(aiPick));
+    let result;
+    if ((userPick === 'rock' && aiPick === 'scissors') || (userPick === 'paper' && aiPick === 'rock') || (userPick === 'scissors' && aiPick === 'paper')) {
+      result = 'You Win';
+    } else if (userPick === aiPick) {
+      result = 'You Tied';
+    } else {
+      result = 'You Lose';
+    }
+    const response = {
+      userPick: userPick,
+      aiPick: aiPick,
+      gifs: result
+    };
+   
+    res.end(JSON.stringify(response));
+  }
   
     // if('student' in params){
     //   if(params['student']== 'leon'){
@@ -66,7 +88,7 @@ const server = http.createServer((req, res) => {
     //     res.end(JSON.stringify(objToJson));
     //   }//student != leon
     // }//student if
-  }//else if
+  //else if
   else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {
       res.write(data);

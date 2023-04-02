@@ -14,7 +14,7 @@ async function makeReq(){
   //console logs the ai pick data  
   console.log(data);
 
-  // document.querySelector("#personName").textContent = data.name
-  // document.querySelector("#personStatus").textContent = data.status
-  // document.querySelector("#personOccupation").textContent = data.currentOccupation
+  document.querySelector(".userpicks").textContent = data.userPick
+  document.querySelector(".aipicks").textContent = data.aipicks
+  document.querySelector("#gifs").textContent = data.gifs
 }
