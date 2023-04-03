@@ -1,3 +1,6 @@
+* {
+  border: red solid 1px;
+}
 h1{
   color: red;
   text-align:center;
@@ -22,13 +25,18 @@ button{
 
 /* borders are temporary just see if grid is working */
 .player {
-  border: rebeccapurple solid 5px;
+  display: flex;
+  justify-content: flex-end;
+  /* border: rebeccapurple solid 5px; */
 }
 .cpu {
-  border: orangered solid 5px;
+  display: flex;
+  justify-content: flex-start;
+  /* border: orangered solid 5px; */
 }
 .vs {
-  border: blue solid 5px;
+  text-align: center;
+  /* border: blue solid 5px; */
 }
 
 #gifs {
@@ -48,8 +56,8 @@ button{
   justify-content: center;
   align-items: center;
   text-align: center;
-  grid-template: 1fr / repeat(3, 1fr);
+  grid-template: 1fr / 1fr 100px 1fr;
   gap: 10px;
-  border: red solid 5px;
+  /* border: red solid 5px; */
 }
 /*  */
