@@ -30,27 +30,48 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-  // else if (page == '/otherpage') {
-  //   fs.readFile('otherpage.html', function(err, data) {
-  //     res.writeHead(200, {'Content-Type': 'text/html'});
-  //     res.write(data);
-  //     res.end();
-  //   });
-  // }
-  // else if (page == '/otherotherpage') {
-  //   fs.readFile('otherotherpage.html', function(err, data) {
-  //     res.writeHead(200, {'Content-Type': 'text/html'});
-  //     res.write(data);
-  //     res.end();
-  //   });
-  // }
-
-  // Victory at last!!!
-  // sike it got me again, user pick keeps coming back as rock :facepalm:
-  // score figured out, got the user pick to work
-  // win conditions aren't coming back correctly
-  // it was a typo on my part, I had scissors instead of scissor
-  // broke it again but I found the issue it needed to be ['userPick'] not [userPick].
+  else if (page == '/images/rock.jpg') {
+    fs.readFile('images/rock.jpg', function (err, data) {
+      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+      res.write(data);
+      res.end();
+    })
+  }
+  else if (page == '/images/SSBUP.png') {
+    fs.readFile('images/SSBUP.png', function (err, data) {
+      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+      res.write(data);
+      res.end();
+    });
+  }
+  else if (page == '/images/paper.jpeg') {
+    fs.readFile('images/paper.jpeg', function (err, data) {
+      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+      res.write(data);
+      res.end();
+    });
+  }
+  else if (page == '/images/scissor.jpeg') {
+    fs.readFile('images/scissor.jpeg', function (err, data) {
+      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+      res.write(data);
+      res.end();
+    });
+  }
+  else if (page == '/images/vs.png') {
+    fs.readFile('images/vs.png', function (err, data) {
+      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+      res.write(data);
+      res.end();
+    });
+  }
+  else if (page == 'images/victory.gif') {
+    fs.readFile('images/victory.gif', function (err, data) {
+      res.writeHead(200, { 'Content-Type': 'image/gif' });
+      res.write(data);
+      res.end();
+    });
+  }
 
   // Victory conditional
   else if (page == '/api') {
@@ -63,42 +84,22 @@ const server = http.createServer((req, res) => {
     
     // if satements for the RPS game
     if ((userPick == "rock" && aiPick == "scissor") || (userPick === 'paper' && aiPick === 'rock') || (userPick === 'scissor' && aiPick === 'paper')) {
-      result = 'You Win';
+      result = 'youWin';
     } else if (userPick === aiPick) {
-      result = 'You Tied';
+      result = 'youTied';
     } else {
-      result = 'You Lose';
+      result = 'youLose';
     }
+    // object that is sent to the front end
     const response = {
       userPick: userPick,
       aiPick: aiPick,
       result: result
     };
-    console.log('userPick:', userPick, 'aiPick:', aiPick);
+    console.log('userPick:', userPick, 'aiPick:', aiPick, 'result', result);
     res.end(JSON.stringify(response));
   }
 
-  // if('student' in params){
-  //   if(params['student']== 'leon'){
-  //     res.writeHead(200, {'Content-Type': 'application/json'});
-  //     const objToJson = {
-  //       name: "leon",
-  //       status: "Boss Man",
-  //       currentOccupation: "Baller"
-  //     }
-  //     res.end(JSON.stringify(objToJson));
-  //   }//student = leon
-  //   else if(params['student'] != 'leon'){
-  //     res.writeHead(200, {'Content-Type': 'application/json'});
-  //     const objToJson = {
-  //       name: "unknown",
-  //       status: "unknown",
-  //       currentOccupation: "unknown"
-  //     }
-  //     res.end(JSON.stringify(objToJson));
-  //   }//student != leon
-  // }//student if
-  //else if
   else if (page == '/css/style.css') {
     fs.readFile('css/style.css', function (err, data) {
       res.write(data);

@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-  <body>
-    <h1>Rock Paper Scissors</h1>
 
-    <form action="">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
-      <fieldset>
-        <legend>Select your choice:</legend>
-          <div class="choicebox">
-            <input id="rock" type="radio" name="userpick" value="rock" checked>
-            <label for="rock">Rock</label>
-          
-            <input id="paper" type="radio" name="userpick" value="paper">
-            <label for="paper">Paper</label>
-        
-            <input id="scissor" type="radio" name="userpick" value="scissor">
-            <label for="scissor">Scissor</label>
-          </div>
-          <button id="clickMe" type="button" name="button">Let's Battle!</button>
-      </fieldset>
-      
-    </form>
+<body>
+  <h1>Rock Paper Scissors</h1>
 
-    <!-- Grid for player & cpu image -->
-    <div class="characterImage">
-      <!-- Player image -->
-      <div class="player">
-        <img src="" alt="">
-        <h1 class="userpicks"></h1>
+  <form action="">
+
+    <fieldset>
+      <legend>Choose Your Fighter!</legend>
+      <div class="choicebox">
+        <input id="rock" type="radio" name="userpick" value="rock" checked>
+        <label for="rock">Rock</label>
+
+        <input id="paper" type="radio" name="userpick" value="paper">
+        <label for="paper">Paper</label>
+
+        <input id="scissor" type="radio" name="userpick" value="scissor">
+        <label for="scissor">Scissor</label>
       </div>
-      <!-- VS image -->
-      <div class="vs">
-        <img src="" alt="">
-        <h1>vs</h1>
-      </div>
-      <!-- CPU image -->
-      <div class="cpu">
-        <img src="" alt=""/>
-        <h1 class="aipick"></h1>
-      </div>
+      <button id="clickMe" type="button" name="button">Let's Battle!</button>
+    </fieldset>
+
+  </form>
+
+  <!-- Grid for player & cpu image -->
+  <div class="characterImage">
+    <!-- Player image -->
+    <div class="player">
+      <img class="userpicks" src="">
     </div>
+    <!-- VS image -->
+    <div class="vs">
+      <img src="images/vs.png" alt="">
+    </div>
+    <!-- CPU image -->
+    <div class="cpu">
+      <img class="aipick" src="" alt="" />
+    </div>
+  </div>
 
-    <!-- place to put gifs -->
-    <img id="gifs" src='' />
-    <h1 id="result"></h1>
+  <!-- place to put gifs -->
+  <div class="blockContainer">
+    <img id="result" src="" alt="" />
+  </div>
 
-    <!-- place to put the winning counts -->
-    <h2 id="count"></h2>
-    <script type="text/javascript" src="/js/main.js"></script>
-  </body>
+  <!-- place to put the winning counts -->
+  <h2 id="count"></h2>
+  <script type="text/javascript" src="/js/main.js"></script>
+</body>
+
 </html>
