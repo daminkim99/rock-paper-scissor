@@ -6,15 +6,15 @@ async function makeReq(){
   
   //request to the server the fetch  
   // const res = await fetch(`/api?pick=${userPick}`)
-
+ 
   //this fetches the ai pick for RPS 
 
-  const res = await fetch(`/api`)
+  const res = await fetch(`/api?userPick=${userPick}`)
   const data = await res.json()
   //console logs the ai pick data  
   console.log(data);
 
   document.querySelector(".userpicks").textContent = data.userPick
-  document.querySelector(".aipicks").textContent = data.aipicks
-  document.querySelector("#gifs").textContent = data.gifs
+  document.querySelector(".aipick").textContent = data.aiPick
+  document.querySelector("#result").textContent = data.result
 }
