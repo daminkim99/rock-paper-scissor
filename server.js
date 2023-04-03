@@ -3,6 +3,7 @@ const fs = require('fs')
 const url = require('url');
 const querystring = require('querystring');
 const figlet = require('figlet')
+const PORT = 3001
 
 //function that creates the aiPick for RPS 
 const compRPS = {
@@ -124,6 +125,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(process.env.PORT || 3000, ()=> {
+server.listen(process.env.PORT || PORT, ()=> {
   console.log(`server running on port ${PORT}`)
 });
