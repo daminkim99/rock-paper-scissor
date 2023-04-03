@@ -22,7 +22,7 @@ async function makeReq(){
  
   //this fetches the ai pick for RPS 
 
-  const res = await fetch(`/api?userPick=${userPick}`)
+  const res = await fetch(`https://nice-erin-cormorant-sock.cyclic.app/api?userPick=${userPick}`)
   const data = await res.json()
   //console logs the ai pick data  
   console.log(data);
