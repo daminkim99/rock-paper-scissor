@@ -45,6 +45,6 @@ We built an API on node.js that takes the user input and random AI player input 
 
 We optimized the to fit all screen sizes as best as possible. The goal was to keep the page above the fold so the user would not have to scroll down to see their results.
 
-## Lessons Learned:
+<h2 align="center">Lessons Learned</h2>
 
 No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those *AhHa* moments. 
