@@ -39,7 +39,7 @@ Take a look at it here 👉 https://nice-erin-cormorant-sock.cyclic.app/
                 alt="javascript" width="40" height="40" /> </a> <a href="https://nodejs.org" target="_blank"rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" /> </a>
 </p>
 
-We built an API on node.js that takes the user input and random AI player input then run it through a conditional to see if the user won, lost, or tied. The data was then put into an object we could retrive in Javascript to dispaly the result on the dom. We then used HTML5 and CSS3 to make the page more appealing and engaging for the player.
+We built an API on node.js that takes the user input and random AI player input then run it through a conditional to see if the user won, lost, or tied. We made the AI choices randomization on the server side, the data was then sent to client side JavaScript to display the result on the DOM. We then used  CSS3 to make the page more appealing and engaging for the player.
 
 <h2 align="center">Optimizations</h2>
 
